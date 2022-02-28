@@ -16,9 +16,11 @@ function Users(props) {
 
     function viewUser(id) {
         setIsModalVisible(true)
-        changeCurrentUser(users.find(item => {
-            return item.id = id
-        }))
+        let current = users.find(item => {
+            return item.id == id
+        })
+        console.log(current)
+        changeCurrentUser(current)
 
     }
 
@@ -37,7 +39,7 @@ function Users(props) {
                 bordered
                 dataSource={users}
                 renderItem={item =>
-                    <List.Item actions={[<Button key="view" onClick={() => viewUser(item.id)}>view</Button>,
+                    <List.Item key={item.id} actions={[<Button key="view" onClick={() => viewUser(item.id)}>view</Button>,
                         <Button key="delete" onClick={() => deleteUser(item.id)}>delete</Button>]}>
                         <div>{item.id}</div>
                         <div>{item.name}</div>

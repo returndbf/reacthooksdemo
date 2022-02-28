@@ -1,6 +1,6 @@
-import Home from "../assets/Home"
-import Users from "../assets/Users";
-import Create from "../assets/Create";
+import Home from "../component/Home"
+import Users from "../component/Users";
+import Create from "../component/Create";
 export default[
     {
         path:"/home",
