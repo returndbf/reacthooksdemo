@@ -4,7 +4,7 @@ import {UserContext} from "../App";
 import {useNavigate} from "react-router-dom";
 
 function Create(props) {
-    const {users, dispatch} = useContext(UserContext)
+    const {users, dispatch,key,setKey} = useContext(UserContext)
     const input1 = useRef()
     const input2 = useRef()
     const navigate = useNavigate()
@@ -24,7 +24,11 @@ function Create(props) {
                 }
             })
             message.info('创建成功');
+            setKey("users")
            navigate("/users")
+            console.log(key)
+
+
             console.log(users)
         }
 
